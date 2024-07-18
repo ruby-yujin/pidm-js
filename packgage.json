@@ -1,0 +1,17 @@
+{
+  "name": "pidm-js",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {},
+  "scripts": {
+    "sass": "sass --watch assets/style/scss:assets/style/css",
+    "sass:watch": "sass --watch assets/style/scss:assets/style/css"
+  },
+  "eslintConfig": {
+    "extends": []
+  },
+  "browserslist": {
+    "production": [],
+    "development": []
+  }
+}
