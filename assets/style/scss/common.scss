@@ -59,10 +59,13 @@
     margin-top: 30px;
   }
   .customer-center {
-    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
     img {
       width: 24px;
       margin-bottom: 5px;
+      display: block;
     }
     strong {
       font-size: 18px;
@@ -86,9 +89,7 @@
     }
     .customer-center {
       margin-top: 30px;
-      text-align: center;
-      display: flex;
-      align-items: center;
+      flex-direction: row;
       margin-left: auto;
       img {
         margin-bottom: 0;

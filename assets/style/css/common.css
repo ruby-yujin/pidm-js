@@ -59,11 +59,14 @@
   margin-top: 30px;
 }
 #footer .customer-center {
-  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
 }
 #footer .customer-center img {
   width: 24px;
   margin-bottom: 5px;
+  display: block;
 }
 #footer .customer-center strong {
   font-size: 18px;
@@ -88,9 +91,7 @@
   }
   #footer .customer-center {
     margin-top: 30px;
-    text-align: center;
-    display: flex;
-    align-items: center;
+    flex-direction: row;
     margin-left: auto;
   }
   #footer .customer-center img {
