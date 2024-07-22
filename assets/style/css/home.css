@@ -1,3 +1,65 @@
+.content-box {
+  padding: 15px;
+  background: #fff;
+}
+.content-box .title {
+  font-size: 20px;
+  color: #000;
+  font-weight: 600;
+  margin-bottom: 2%;
+}
+.content-box .title span {
+  color: #666;
+  font-size: 20px;
+}
 
+.custom-tab .custom-tab-ul {
+  display: flex;
+  width: 100%;
+  border-bottom: 1px solid #000;
+  margin-bottom: 1.5%;
+}
+.custom-tab .custom-tab-ul li {
+  padding: 10px;
+  font-size: 16px;
+}
+.custom-tab .custom-tab-ul li.ui-state-active {
+  background: #e73d45;
+  color: #fff;
+  font-weight: bold;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.tabs-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  width: 100%;
+}
+
+.price-box {
+  flex: 1;
+  min-width: 0;
+  min-height: 80px;
+  border-radius: 5px;
+  background: #5a5a5a;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+}
+.price-box.total {
+  background: #e73d45;
+}
+.price-box .subject {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.price-box .price {
+  margin-top: auto;
+  margin-left: auto;
+}
 
 /*# sourceMappingURL=home.css.map */

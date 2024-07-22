@@ -3,10 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>웹사이트 제목</title>
-
-    <!-- jQuery CDN 사용 (더 안정적이고 최신 버전 사용 가능) -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>프레스피코리아-PIDM:홈</title>
 
     <!-- 폰트 -->
     <link
@@ -14,10 +11,31 @@
       rel="stylesheet"
     />
 
+    <!-- <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css"
+    /> -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+
     <!-- CSS -->
     <link rel="stylesheet" href="../assets/style/css/reset.css" />
     <link rel="stylesheet" href="../assets/style/css/common.css" />
     <link rel="stylesheet" href="../assets/style/css/home.css" />
+
+    <!-- JS -->
+    <script src="../assets/js/nav.js"></script>
+    <script src="../assets/js/home.js"></script>
+
+    <!-- Graph JS  -->
+    <script
+      type="text/javascript"
+      src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.canvasjs.com/jquery.canvasjs.min.js"
+    ></script>
   </head>
   <body>
     <!-- header -->
@@ -37,7 +55,7 @@
       <aside>
         <nav id="nav">
           <ul class="main-menu">
-            <li class="active">
+            <li>
               <a href="">
                 <img
                   src="../assets//img/nav/icon-home.png"
@@ -56,6 +74,13 @@
                 />
                 자판기 매출정보</a
               >
+              <ul class="sub-menu">
+                <li class="active"><a href="">거래내역</a></li>
+                <li><a href="">매출집계</a></li>
+                <li><a href="">마감현황</a></li>
+                <li><a href="">입금현황</a></li>
+                <li><a href="">정신현황</a></li>
+              </ul>
             </li>
             <li>
               <a href="">
@@ -66,6 +91,9 @@
                 />
                 자판기 운영정보</a
               >
+              <ul class="sub-menu">
+                <li><a href="">가동상태 조회</a></li>
+              </ul>
             </li>
             <li>
               <a href="">
@@ -76,17 +104,178 @@
                 />
                 서비스관리</a
               >
+              <ul class="sub-menu">
+                <li><a href="">개인 정보 조회</a></li>
+                <li><a href="">상품 그룹 관리</a></li>
+                <li><a href="">상품관리</a></li>
+                <li><a href="">운영 자판기 관리</a></li>
+              </ul>
             </li>
             <li>
               <a href="">
                 <img src="../assets//img/nav/icon-ms.png" alt="" class="icon" />
                 고객센터</a
               >
+              <ul class="sub-menu">
+                <li><a href="">공지사항</a></li>
+                <li><a href="">자주 묻는 질문</a></li>
+              </ul>
             </li>
           </ul>
         </nav>
       </aside>
-      <section></section>
+
+      <section>
+        <div class="content-box">
+          <h3 class="title"><span>│</span> 최근 매출 현황</h3>
+          <div id="recent-total" class="custom-tab">
+            <ul class="custom-tab-ul">
+              <li><a href="#tabs-1">금일(화)</a></li>
+              <li><a href="#tabs-2">05/27(월)</a></li>
+              <li><a href="#tabs-3">05/28(일)</a></li>
+            </ul>
+            <div id="tabs-1" class="tabs-content">
+              <div class="price-box">
+                <div class="subject">
+                  <p>현금</p>
+                  <p>000건</p>
+                </div>
+                <strong class="price">0,000,000원</strong>
+              </div>
+
+              <div class="price-box">
+                <div class="subject">
+                  <p>현금영수증</p>
+                  <p>000건</p>
+                </div>
+                <strong class="price">0,000,000원</strong>
+              </div>
+              <div class="price-box">
+                <div class="subject">
+                  <p>신용</p>
+                  <p>000건</p>
+                </div>
+                <strong class="price">0,000,000원</strong>
+              </div>
+              <div class="price-box">
+                <div class="subject">
+                  <p>선불</p>
+                  <p>000건</p>
+                </div>
+                <strong class="price">0,000,000원</strong>
+              </div>
+              <div class="price-box">
+                <div class="subject">
+                  <p>간편결제</p>
+                  <p>000건</p>
+                </div>
+                <strong class="price">0,000,000원</strong>
+              </div>
+              <div class="price-box total">
+                <div class="subject">
+                  <p>Total</p>
+                  <p>000건</p>
+                </div>
+                <strong class="price">0,000,000원</strong>
+              </div>
+            </div>
+            <div id="tabs-2" class="tabs-content">
+              <div class="price-box">
+                <div class="subject">
+                  <p>현금</p>
+                  <p>000건</p>
+                </div>
+                <strong class="price">0,000,000원</strong>
+              </div>
+
+              <div class="price-box">
+                <div class="subject">
+                  <p>현금영수증</p>
+                  <p>000건</p>
+                </div>
+                <strong class="price">0,000,000원</strong>
+              </div>
+              <div class="price-box">
+                <div class="subject">
+                  <p>신용</p>
+                  <p>000건</p>
+                </div>
+                <strong class="price">0,000,000원</strong>
+              </div>
+              <div class="price-box">
+                <div class="subject">
+                  <p>선불</p>
+                  <p>000건</p>
+                </div>
+                <strong class="price">0,000,000원</strong>
+              </div>
+              <div class="price-box">
+                <div class="subject">
+                  <p>간편결제</p>
+                  <p>000건</p>
+                </div>
+                <strong class="price">0,000,000원</strong>
+              </div>
+              <div class="price-box total">
+                <div class="subject">
+                  <p>Total</p>
+                  <p>000건</p>
+                </div>
+                <strong class="price">0,000,000원</strong>
+              </div>
+            </div>
+            <div id="tabs-3" class="tabs-content">
+              <div class="price-box">
+                <div class="subject">
+                  <p>현금</p>
+                  <p>000건</p>
+                </div>
+                <strong class="price">0,000,000원</strong>
+              </div>
+
+              <div class="price-box">
+                <div class="subject">
+                  <p>현금영수증</p>
+                  <p>000건</p>
+                </div>
+                <strong class="price">0,000,000원</strong>
+              </div>
+              <div class="price-box">
+                <div class="subject">
+                  <p>신용</p>
+                  <p>000건</p>
+                </div>
+                <strong class="price">0,000,000원</strong>
+              </div>
+              <div class="price-box">
+                <div class="subject">
+                  <p>선불</p>
+                  <p>000건</p>
+                </div>
+                <strong class="price">0,000,000원</strong>
+              </div>
+              <div class="price-box">
+                <div class="subject">
+                  <p>간편결제</p>
+                  <p>000건</p>
+                </div>
+                <strong class="price">0,000,000원</strong>
+              </div>
+              <div class="price-box total">
+                <div class="subject">
+                  <p>Total</p>
+                  <p>000건</p>
+                </div>
+                <strong class="price">0,000,000원</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="content-box">
+          <div id="sales-status-graph" style="height: 370px; width: 100%"></div>
+        </div>
+      </section>
     </main>
 
     <!-- footer -->
