@@ -1,5 +1,5 @@
 .content-box {
-  padding: 15px;
+  padding: 25px 15px 15px;
   background: #fff;
 }
 .content-box .title {
@@ -11,6 +11,51 @@
 .content-box .title span {
   color: #666;
   font-size: 20px;
+}
+.content-box .title.border {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #000;
+}
+.content-box.full-border {
+  padding: 25px 0 0;
+}
+.content-box.full-border .title {
+  margin-bottom: 0;
+  padding-bottom: 2%;
+  border-bottom: 1px solid #000;
+}
+@media screen and (max-width: 1024px) {
+  .content-box {
+    padding: 25px 10px 15px;
+  }
+  .content-box .title {
+    font-size: 18px;
+  }
+  .content-box .title span {
+    font-size: 18px;
+  }
+  .content-box .title.border {
+    border-bottom: none;
+  }
+}
+
+.content-row {
+  display: flex;
+}
+.content-row .content-col {
+  flex: 1;
+}
+.content-row .content-col.border-r {
+  border-right: 1px solid #000;
+}
+@media screen and (max-width: 540px) {
+  .content-row {
+    flex-direction: column;
+  }
+  .content-row .content-col.border-r {
+    border-right: none;
+    border-bottom: 1px solid #000;
+  }
 }
 
 .custom-tab .custom-tab-ul {
@@ -30,12 +75,21 @@
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
+@media screen and (max-width: 1024px) {
+  .custom-tab .custom-tab-ul {
+    margin: 4% 0;
+  }
+  .custom-tab .custom-tab-ul li {
+    font-size: 14px;
+  }
+}
 
 .tabs-content {
   display: flex;
   justify-content: space-between;
   gap: 10px;
   width: 100%;
+  flex-wrap: wrap;
 }
 
 .price-box {
@@ -49,7 +103,7 @@
   flex-direction: column;
   color: #fff;
 }
-.price-box.total {
+.price-box.total-box {
   background: #e73d45;
 }
 .price-box .subject {
@@ -60,6 +114,164 @@
 .price-box .price {
   margin-top: auto;
   margin-left: auto;
+}
+@media screen and (max-width: 1300px) {
+  .price-box {
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .price-box {
+    font-size: 14px;
+    width: calc(50% - 5px);
+    flex: none;
+  }
+  .price-box .subject p:first-child {
+    font-weight: bold;
+  }
+}
+
+.col-content-wrap {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+.col-content-wrap > div {
+  flex: 1;
+}
+@media screen and (max-width: 1024px) {
+  .col-content-wrap {
+    flex-direction: column;
+  }
+}
+
+.period-graph-tab {
+  display: flex;
+  justify-content: flex-end;
+}
+.period-graph-tab li {
+  width: 50px;
+  height: 30px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #5a5a5a;
+  border-radius: 5px;
+  margin-right: -5px;
+  font-size: 14px;
+}
+.period-graph-tab li.ui-state-active {
+  background: #e73d45;
+  font-weight: bold;
+}
+
+.total {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.sales-item {
+  border-bottom: 1px solid #000;
+  padding: 15px;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+}
+.sales-item.border-b-none {
+  border-bottom: none;
+}
+.sales-item .sales-type {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+.sales-item .sales-type .dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+.sales-item .sales-type .dot.red {
+  background-color: #e83d45;
+}
+.sales-item .sales-type .dot.blue {
+  background-color: #4fc7d9;
+}
+.sales-item .sales-type .type-name {
+  font-size: 16px;
+  font-weight: bold;
+}
+.sales-item .sales-amount {
+  margin-top: auto;
+  margin-left: auto;
+  text-align: right;
+}
+.sales-item .sales-amount .amount {
+  font-size: 20px;
+  font-weight: 400;
+  display: block;
+  margin-bottom: 2px;
+}
+.sales-item .sales-amount .count {
+  font-size: 14px;
+  color: #666;
+}
+
+.notice-box {
+  background: #fff;
+}
+.notice-box h3 {
+  background: #5a5a5a;
+  color: #fff;
+  padding: 15px;
+}
+.notice-box ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 15px;
+}
+.notice-box ul li {
+  padding-left: 10px;
+}
+.notice-box ul li a {
+  color: #000;
+  font-size: 14px;
+}
+.notice-box .bottom-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+}
+.notice-box .bottom-button a {
+  width: 160px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 14px;
+  background: #fa000e;
+}
+@media screen and (max-width: 1024px) {
+  .notice-box ul {
+    gap: 8px;
+  }
+  .notice-box ul li {
+    padding-left: 5px;
+  }
+  .notice-box ul li a {
+    font-size: 12px;
+  }
+  .notice-box .bottom-button a {
+    width: 110px;
+    height: 34px;
+    font-size: 12px;
+  }
 }
 
 /*# sourceMappingURL=home.css.map */

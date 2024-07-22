@@ -36,12 +36,21 @@
 #header .btn-logout img {
   max-width: 22px;
 }
+@media screen and (max-width: 1024px) {
+  #header .btn-nav img,
+  #header .btn-logout-m img {
+    width: 20px;
+  }
+}
 
 #footer {
   padding: 3% 30px;
   background: #f7f7f7;
   font-size: 14px;
   color: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
 }
 #footer .company-info {
   margin-bottom: 5px;
@@ -49,20 +58,82 @@
 #footer .copy {
   margin-top: 30px;
 }
+#footer .customer-center {
+  text-align: right;
+}
+#footer .customer-center img {
+  width: 24px;
+  margin-bottom: 5px;
+}
+#footer .customer-center strong {
+  font-size: 18px;
+  font-weight: bold;
+}
+#footer .customer-center strong span {
+  font-size: 14px;
+  margin-right: 5px;
+}
+@media screen and (max-width: 1024px) {
+  #footer {
+    padding: 8% 15px;
+    font-size: 10px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  #footer .company-info {
+    margin-bottom: 0;
+  }
+  #footer .copy {
+    margin-top: 0;
+  }
+  #footer .customer-center {
+    margin-top: 30px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+  }
+  #footer .customer-center img {
+    margin-bottom: 0;
+    margin-right: 5px;
+  }
+}
 
 #content {
   display: flex;
 }
 #content aside {
   width: 200px;
-  height: 700px;
   background: #494949;
   padding: 25px 0;
+  transition: all 0.3s ease;
 }
 #content section {
   width: calc(100% - 200px);
   background: #424242;
   padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+@media screen and (max-width: 1024px) {
+  #content {
+    position: relative;
+  }
+  #content aside {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    height: 100%;
+    transform: translateX(-100%);
+  }
+  #content aside.active {
+    transform: translateX(0);
+  }
+  #content section {
+    width: 100%;
+  }
 }
 
 #nav ul.main-menu li a {
@@ -159,6 +230,10 @@
     height: 46px;
     font-size: 14px;
   }
+}
+
+.border-none {
+  border: none !important;
 }
 
 /*# sourceMappingURL=common.css.map */

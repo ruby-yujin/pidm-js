@@ -147,7 +147,7 @@ button {
 @media screen and (max-width: 1024px) {
   .show-desktop {
     opacity: 0;
-    display: none;
+    display: none !important;
   }
 }
 

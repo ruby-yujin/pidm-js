@@ -11,12 +11,12 @@
       rel="stylesheet"
     />
 
-    <!-- <link
-      rel="stylesheet"
-      href="https://code.jquery.com/ui/1.13.3/themes/base/jquery-ui.css"
-    /> -->
+    <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+
+    <!-- Graph JS  -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
 
     <!-- CSS -->
     <link rel="stylesheet" href="../assets/style/css/reset.css" />
@@ -26,33 +26,30 @@
     <!-- JS -->
     <script src="../assets/js/nav.js"></script>
     <script src="../assets/js/home.js"></script>
-
-    <!-- Graph JS  -->
-    <script
-      type="text/javascript"
-      src="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"
-    ></script>
-    <script
-      type="text/javascript"
-      src="https://cdn.canvasjs.com/jquery.canvasjs.min.js"
-    ></script>
+    <script src="../assets/js/graph.js"></script>
   </head>
   <body>
     <!-- header -->
     <header id="header">
+      <button id="toggleNav" class="btn-nav show-mobile">
+        <img src="../assets/img/nav/icon-nav.png" alt="" />
+      </button>
       <div class="logo-wrap">
-        <img src="../assets/img/logo.png" alt="" class="logo" />
+        <img src="../assets/img/logo.png" alt="" class="logo show-desktop" />
         <span class="line"></span>
         <img src="../assets/img/logo-title.png" alt="" class="logo-title" />
       </div>
-      <button type="button" class="btn-logout">
+      <button type="button" class="btn-logout show-desktop">
         <img src="../assets/img/icon-logout.png" alt="" /> LOGOUT
+      </button>
+      <button type="button" class="btn-logout-m show-mobile">
+        <img src="../assets/img/icon-logout-m.png" alt="" />
       </button>
     </header>
     <!-- //header -->
 
     <main id="content">
-      <aside>
+      <aside id="nav-wrap">
         <nav id="nav">
           <ul class="main-menu">
             <li>
@@ -128,6 +125,7 @@
       <section>
         <div class="content-box">
           <h3 class="title"><span>│</span> 최근 매출 현황</h3>
+
           <div id="recent-total" class="custom-tab">
             <ul class="custom-tab-ul">
               <li><a href="#tabs-1">금일(화)</a></li>
@@ -171,7 +169,7 @@
                 </div>
                 <strong class="price">0,000,000원</strong>
               </div>
-              <div class="price-box total">
+              <div class="price-box total-box">
                 <div class="subject">
                   <p>Total</p>
                   <p>000건</p>
@@ -216,7 +214,7 @@
                 </div>
                 <strong class="price">0,000,000원</strong>
               </div>
-              <div class="price-box total">
+              <div class="price-box total-box">
                 <div class="subject">
                   <p>Total</p>
                   <p>000건</p>
@@ -261,7 +259,7 @@
                 </div>
                 <strong class="price">0,000,000원</strong>
               </div>
-              <div class="price-box total">
+              <div class="price-box total-box">
                 <div class="subject">
                   <p>Total</p>
                   <p>000건</p>
@@ -273,19 +271,159 @@
         </div>
 
         <div class="content-box">
-          <div id="sales-status-graph" style="height: 370px; width: 100%"></div>
+          <h3 class="title border"><span>│</span> 매출 현황</h3>
+          <div id="period-graph">
+            <ul class="period-graph-tab">
+              <li><a href="#tabs-daily">일간</a></li>
+              <li><a href="#tabs-monthly">월간</a></li>
+            </ul>
+            <div id="tabs-daily">
+              <div id="period-status" style="width: 100%; height: 400px"></div>
+            </div>
+            <div id="tabs-monthly">
+              <div id="period-status" style="width: 100%; height: 400px"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-content-wrap">
+          <div class="content-box full-border">
+            <h3 class="title"><span>│</span> 당일 매출 현황</h3>
+            <div class="content-row">
+              <div class="content-col border-r">
+                <div id="daily-donut" style="width: 100%; height: 240px"></div>
+                <p class="total">000건</p>
+                <p class="total">0,000,000원</p>
+              </div>
+              <div class="content-col">
+                <div class="sales-item">
+                  <div class="sales-type">
+                    <span class="dot red"></span>
+                    <span class="type-name">신용카드</span>
+                  </div>
+                  <div class="sales-amount">
+                    <span class="amount">0,000,000원</span>
+                    <span class="count">(000건)</span>
+                  </div>
+                </div>
+                <div class="sales-item border-none">
+                  <div class="sales-type">
+                    <span class="dot blue"></span>
+                    <span class="type-name">신용카드</span>
+                  </div>
+                  <div class="sales-amount">
+                    <span class="amount">0,000,000원</span>
+                    <span class="count">(000건)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="content-box full-border">
+            <h3 class="title"><span>│</span> 당월 매출 현황</h3>
+            <div class="content-row">
+              <div class="content-col border-r">
+                <div
+                  id="monthly-donut"
+                  style="width: 100%; height: 240px"
+                ></div>
+                <p class="total">000건</p>
+                <p class="total">0,000,000원</p>
+              </div>
+              <div class="content-col">
+                <div class="sales-item">
+                  <div class="sales-type">
+                    <span class="dot red"></span>
+                    <span class="type-name">신용카드</span>
+                  </div>
+                  <div class="sales-amount">
+                    <span class="amount">0,000,000원</span>
+                    <span class="count">(000건)</span>
+                  </div>
+                </div>
+                <div class="sales-item border-none">
+                  <div class="sales-type">
+                    <span class="dot blue"></span>
+                    <span class="type-name">신용카드</span>
+                  </div>
+                  <div class="sales-amount">
+                    <span class="amount">0,000,000원</span>
+                    <span class="count">(000건)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-content-wrap">
+          <div class="notice-box">
+            <h3>│ 공지사항</h3>
+            <ul>
+              <li>
+                <a href=""
+                  >· [복구완료]시스템 오류로 인한 거래내역 실시간 유입 지연
+                  안내</a
+                >
+              </li>
+              <li>
+                <a href=""
+                  >· 시스템 오류로 인한 거래내역 실시간 유입 지연 안내</a
+                >
+              </li>
+              <li>
+                <a href=""
+                  >· 전산 작업으로 인한 마이장부 서비스 중지 안내의 건</a
+                >
+              </li>
+            </ul>
+            <div class="bottom-button">
+              <a href="" class="btn-more">+ 더보기</a>
+            </div>
+          </div>
+          <div class="notice-box">
+            <h3>│ 자주 묻는 질문</h3>
+            <ul>
+              <li>
+                <a href=""
+                  >· Google Chrome 브라우저에서 팝업 차단/ 해제 방법이
+                  궁금합니다.</a
+                >
+              </li>
+              <li>
+                <a href="">· 가맹점 매출 입금 수수료율 관련</a>
+              </li>
+              <li>
+                <a href=""
+                  >· 가맹점 정보 변경 관련 [입금계좌/상호명/대표자/사업장소재지
+                  등]</a
+                >
+              </li>
+            </ul>
+            <div class="bottom-button">
+              <a href="" class="btn-more">+ 더보기</a>
+            </div>
+          </div>
         </div>
       </section>
     </main>
 
     <!-- footer -->
     <footer id="footer">
-      <p class="company-info">주식회사 프레피스 코리아 | 대표이사: 마채환</p>
-      <p class="company-info">
-        사업자등록번호: 101-86-78955 | 서울시 성동구 상원1길 26 서울숲A타워
-        1301호 (우)04779 | Fax. 02-2295-3801
-      </p>
-      <p class="copy">Copyright 2014 ⓒ PREPHIS COREA. All right reserved.</p>
+      <div>
+        <p class="company-info">주식회사 프레피스 코리아 | 대표이사: 마채환</p>
+        <p class="company-info">
+          사업자등록번호: 101-86-78955 | <br class="show-mobile" />
+          서울시 성동구 상원1길 26 서울숲A타워 1301호 (우)04779 |
+          <br class="show-mobile" />Fax. 02-2295-3801
+        </p>
+        <p class="copy">Copyright 2014 ⓒ PREPHIS COREA. All right reserved.</p>
+      </div>
+
+      <div class="customer-center">
+        <img src="../assets/img/icon-phone.png" alt="" />
+        <strong><span>고객센터</span>1877-8873</strong>
+      </div>
     </footer>
     <!-- //footer -->
   </body>
