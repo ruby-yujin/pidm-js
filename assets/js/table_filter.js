@@ -1,5 +1,14 @@
 $(document).ready(function () {
   $("#start-date").datepicker({
+    dateFormat: "yy.mm.dd",
+    showOn: "button",
+    buttonImage: "../../assets/img/icon-calendar.png",
+    buttonImageOnly: true,
+    buttonText: "Select date"
+  });
+
+  $("#end-date").datepicker({
+    dateFormat: "yy-mm-dd",
     showOn: "button",
     buttonImage: "../../assets/img/icon-calendar.png",
     buttonImageOnly: true,
@@ -44,12 +53,5 @@ $(document).ready(function () {
     dayNamesMin: ["일", "월", "화", "수", "목", "금", "토"],
     showMonthAfterYear: true,
     yearSuffix: "년"
-  });
-
-  $("#end-date").datepicker({
-    showOn: "button",
-    buttonImage: "../../assets/img/icon-calendar.png",
-    buttonImageOnly: true,
-    buttonText: "Select date"
   });
 });
