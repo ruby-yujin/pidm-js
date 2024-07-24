@@ -157,6 +157,9 @@
 #nav ul.main-menu li.active a {
   font-weight: bold;
 }
+#nav ul.main-menu li ul.sub-menu {
+  display: none;
+}
 #nav ul.main-menu li ul.sub-menu li a {
   color: #fff;
   font-size: 16px;

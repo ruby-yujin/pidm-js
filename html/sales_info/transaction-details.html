@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>프레스피코리아-PIDM:홈</title>
+
+    <!-- 폰트 -->
+    <link
+      href="https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo.css"
+      rel="stylesheet"
+    />
+
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+
+    <!-- Graph JS  -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/style/css/reset.css" />
+    <link rel="stylesheet" href="../../assets/style/css/common.css" />
+    <link rel="stylesheet" href="../../assets/style/css/home.css" />
+    <link rel="stylesheet" href="../../assets/style/css/login.css" />
+    <link rel="stylesheet" href="../../assets/style/css/table.css" />
+
+    <!-- JS -->
+    <script src="../../assets/js/nav.js"></script>
+    <script src="../../assets/js/home.js"></script>
+    <script src="../../assets/js/graph.js"></script>
+    <script src="../../assets/js/table_filter.js"></script>
+  </head>
+  <body>
+    <!-- header -->
+    <header id="header">
+      <button id="toggleNav" class="btn-nav show-mobile">
+        <img src="../../assets/img/nav/icon-nav.png" alt="" />
+      </button>
+      <div class="logo-wrap">
+        <img src="../../assets/img/logo.png" alt="" class="logo show-desktop" />
+        <span class="line"></span>
+        <img src="../../assets/img/logo-title.png" alt="" class="logo-title" />
+      </div>
+      <button type="button" class="btn-logout show-desktop">
+        <img src="../../assets/img/icon-logout.png" alt="" /> LOGOUT
+      </button>
+      <button type="button" class="btn-logout-m show-mobile">
+        <img src="../../assets/img/icon-logout-m.png" alt="" />
+      </button>
+    </header>
+    <!-- //header -->
+
+    <main id="content">
+      <aside id="nav-wrap">
+        <nav id="nav">
+          <ul class="main-menu">
+            <li>
+              <a href="../../html/home.html">
+                <img
+                  src="../../assets/img/nav/icon-home.png"
+                  alt=""
+                  class="icon"
+                />
+                홈</a
+              >
+            </li>
+            <li>
+              <a href="">
+                <img
+                  src="../../assets/img/nav/icon-graph.png"
+                  alt=""
+                  class="icon"
+                />
+                자판기 매출정보</a
+              >
+              <ul class="sub-menu">
+                <li>
+                  <a href="../sales_info/transaction-details.html">거래내역</a>
+                </li>
+                <li><a href="">매출집계</a></li>
+                <li><a href="">마감현황</a></li>
+                <li><a href="">입금현황</a></li>
+                <li><a href="">정신현황</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="">
+                <img
+                  src="../../assets/img/nav/icon-management.png"
+                  alt=""
+                  class="icon"
+                />
+                자판기 운영정보</a
+              >
+              <ul class="sub-menu">
+                <li><a href="">가동상태 조회</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="">
+                <img
+                  src="../../assets/img/nav/icon-service.png"
+                  alt=""
+                  class="icon"
+                />
+                서비스관리</a
+              >
+              <ul class="sub-menu">
+                <li><a href="">개인 정보 조회</a></li>
+                <li><a href="">상품 그룹 관리</a></li>
+                <li><a href="">상품관리</a></li>
+                <li><a href="">운영 자판기 관리</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="">
+                <img src="../assets/img/nav/icon-ms.png" alt="" class="icon" />
+                고객센터</a
+              >
+              <ul class="sub-menu">
+                <li><a href="">공지사항</a></li>
+                <li><a href="">자주 묻는 질문</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <section>
+        <div class="content-box">
+          <h3 class="title"><span>│</span> 거래내역</h3>
+          <div class="data-search-box">
+            <div class="form-group">
+              <label for="organization">조직루트</label>
+              <div class="select-wrapper">
+                <select id="organization">
+                  <option value="">선택하세요</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="location">설치위치</label>
+              <div class="select-wrapper">
+                <select id="location">
+                  <option value="">선택하세요</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="date-range">조회기간</label>
+              <div class="date-range">
+                <div class="btn-wrap">
+                  <button class="btn btn-active">오늘</button>
+                  <button class="btn">어제</button>
+                  <button class="btn">이번달</button>
+                  <button class="btn">지난달</button>
+                </div>
+
+                <div class="date-wrapper">
+                  <input type="text" id="start-date" />
+                  <span>~</span>
+                  <input type="text" id="end-date" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- footer -->
+    <footer id="footer">
+      <div>
+        <p class="company-info">주식회사 프레피스 코리아 | 대표이사: 마채환</p>
+        <p class="company-info">
+          사업자등록번호: 101-86-78955 | <br class="show-mobile" />
+          서울시 성동구 상원1길 26 서울숲A타워 1301호 (우)04779 |
+          <br class="show-mobile" />Fax. 02-2295-3801
+        </p>
+        <p class="copy">Copyright 2014 ⓒ PREPHIS COREA. All right reserved.</p>
+      </div>
+
+      <div class="customer-center">
+        <img src="../../assets/img/icon-phone.png" alt="" />
+        <strong><span>고객센터</span>1877-8873</strong>
+      </div>
+    </footer>
+    <!-- //footer -->
+  </body>
+</html>
