@@ -240,4 +240,44 @@
   border: none !important;
 }
 
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.custom-checkbox input[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.custom-checkbox label {
+  position: relative;
+  cursor: pointer;
+  padding-left: 25px;
+  line-height: 20px;
+  display: inline-block;
+}
+.custom-checkbox label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  background-image: url("../../img/checkbox.png");
+  background-size: cover;
+}
+.custom-checkbox input[type=checkbox]:checked + label:before {
+  background-image: url("../../img/checkbox_on.png");
+}
+.custom-checkbox input[type=checkbox]:focus + label:before {
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+}
+.custom-checkbox span {
+  font-size: 14px;
+  margin-left: 5px;
+}
+
 /*# sourceMappingURL=common.css.map */

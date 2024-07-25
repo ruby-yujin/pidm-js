@@ -248,3 +248,56 @@
 .border-none {
   border: none !important;
 }
+
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  // 라벨 스타일링
+  label {
+    position: relative;
+    cursor: pointer;
+    padding-left: 25px; // 이미지 크기에 따라 조정
+    line-height: 20px; // 이미지 크기에 맞춰 조정
+    display: inline-block;
+
+    // 기본 이미지 (체크되지 않은 상태)
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 20px;
+      height: 20px;
+      background-image: url("../../img/checkbox.png");
+      background-size: cover;
+    }
+  }
+
+  // 체크된 상태의 이미지
+  input[type="checkbox"]:checked + label {
+    &:before {
+      background-image: url("../../img/checkbox_on.png");
+    }
+  }
+
+  // 포커스 상태 스타일 (선택사항)
+  input[type="checkbox"]:focus + label {
+    &:before {
+      box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  span {
+    font-size: 14px;
+    margin-left: 5px;
+  }
+}
