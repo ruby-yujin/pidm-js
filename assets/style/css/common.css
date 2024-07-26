@@ -41,6 +41,12 @@
   #header .btn-logout-m img {
     width: 20px;
   }
+  #header .logo-wrap .logo-title {
+    max-width: 200px;
+  }
+  #header .logo-wrap .line {
+    display: none;
+  }
 }
 
 #footer {
@@ -240,6 +246,12 @@
   border: none !important;
 }
 
+.align-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .custom-checkbox {
   display: flex;
   align-items: center;
@@ -275,9 +287,10 @@
 .custom-checkbox input[type=checkbox]:focus + label:before {
   box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
 }
-.custom-checkbox span {
-  font-size: 14px;
-  margin-left: 5px;
+@media screen and (max-width: 1024px) {
+  .custom-checkbox label {
+    font-size: 12px;
+  }
 }
 
 /*# sourceMappingURL=common.css.map */

@@ -43,6 +43,14 @@
         width: 20px;
       }
     }
+    .logo-wrap {
+      .logo-title {
+        max-width: 200px;
+      }
+      .line {
+        display: none;
+      }
+    }
   }
 }
 #footer {
@@ -249,6 +257,12 @@
   border: none !important;
 }
 
+.align-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .custom-checkbox {
   display: flex;
   align-items: center;
@@ -296,8 +310,9 @@
     }
   }
 
-  span {
-    font-size: 14px;
-    margin-left: 5px;
+  @media screen and (max-width: 1024px) {
+    label {
+      font-size: 12px;
+    }
   }
 }
