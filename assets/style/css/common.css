@@ -1,3 +1,4 @@
+@charset "UTF-8";
 #header {
   height: 65px;
   background: #fff;
@@ -289,6 +290,68 @@
 }
 @media screen and (max-width: 1024px) {
   .custom-checkbox label {
+    font-size: 12px;
+  }
+}
+
+.radio-group {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.radio-group .radio-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+  font-size: 16px;
+  user-select: none;
+  flex-wrap: wrap;
+}
+.radio-group .radio-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+.radio-group .radio-checkmark {
+  height: 20px;
+  width: 20px;
+  background-color: #fff;
+  border: 2px solid #e7161b;
+  border-radius: 50%;
+  margin-right: 8px;
+  transition: all 0.2s;
+}
+.radio-group .radio-container input:checked ~ .radio-checkmark {
+  position: relative;
+  background-color: #fff;
+  border-color: #e7161b;
+}
+.radio-group .radio-container input:checked ~ .radio-checkmark:after {
+  content: "◉";
+  position: absolute;
+  top: -4px;
+  left: -3px;
+  margin-left: 0;
+  font-size: 22px;
+  color: #e7161b;
+}
+.radio-group .radio-label {
+  color: #333;
+}
+.radio-group .radio-container input:checked ~ .radio-label {
+  font-weight: bold;
+}
+.radio-group .radio-container input:focus ~ .radio-checkmark {
+  box-shadow: 0 0 0 3px rgba(231, 22, 27, 0.3);
+}
+@media screen and (max-width: 1024px) {
+  .radio-group {
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .radio-group .radio-container,
+  .radio-group .radio-label {
     font-size: 12px;
   }
 }

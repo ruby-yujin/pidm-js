@@ -102,7 +102,7 @@
               </ul>
             </li>
             <li>
-              <a href="">
+              <a href="../../html/machine_manage/machine-status.html">
                 <img
                   src="../../assets/img/nav/icon-management.png"
                   alt=""
@@ -111,7 +111,11 @@
                 자판기 운영정보</a
               >
               <ul class="sub-menu">
-                <li><a href="">가동상태 조회</a></li>
+                <li>
+                  <a href="../machine_manage/machine-status.html"
+                    >가동상태 조회</a
+                  >
+                </li>
               </ul>
             </li>
             <li>
@@ -192,10 +196,6 @@
               </div>
             </div>
             <div class="form-group">
-              <label for="detail-search">상세검색</label>
-              <input type="text" id="detail-search" class="form-group-input" />
-            </div>
-            <div class="form-group">
               <strong>결제유형</strong>
               <div class="checkboxs-wrapper">
                 <div class="custom-checkbox">
@@ -232,55 +232,6 @@
                 </div>
               </div>
             </div>
-            <div class="form-group">
-              <strong>진행상태</strong>
-              <div class="checkboxs-wrapper">
-                <div class="custom-checkbox">
-                  <input type="checkbox" />
-                  <label for="">전체</label>
-                </div>
-                <div class="custom-checkbox">
-                  <input type="checkbox" checked />
-                  <label for="">구매</label>
-                </div>
-                <div class="custom-checkbox">
-                  <input type="checkbox" checked />
-                  <label for="">매입</label>
-                </div>
-                <div class="custom-checkbox">
-                  <input type="checkbox" checked />
-                  <label for="">입금</label>
-                </div>
-                <div class="custom-checkbox">
-                  <input type="checkbox" checked />
-                  <label for="">조회</label>
-                </div>
-                <div class="custom-checkbox">
-                  <input type="checkbox" checked />
-                  <label for="">매입보류</label>
-                </div>
-                <div class="custom-checkbox">
-                  <input type="checkbox" checked />
-                  <label for="">매입거절</label>
-                </div>
-                <div class="custom-checkbox">
-                  <input type="checkbox" checked />
-                  <label for="">부분취소</label>
-                </div>
-                <div class="custom-checkbox">
-                  <input type="checkbox" checked />
-                  <label for="">매입취소</label>
-                </div>
-                <div class="custom-checkbox">
-                  <input type="checkbox" checked />
-                  <label for="">품목</label>
-                </div>
-                <div class="custom-checkbox">
-                  <input type="checkbox" checked />
-                  <label for="">취소</label>
-                </div>
-              </div>
-            </div>
 
             <div class="btn-wrap">
               <button type="submit" class="btn-search">조회</button>
@@ -300,26 +251,34 @@
               <table id="test-table" class="custom-table">
                 <thead>
                   <tr>
-                    <th>순번</th>
-                    <th>거래일시</th>
-                    <th>조직루트</th>
-                    <th>설치위치</th>
-                    <th>단말기ID</th>
-                    <th>자판기코드</th>
-                    <th>상품</th>
-                    <th>결제</th>
+                    <th rowspan="2">날짜</th>
+                    <th rowspan="2">조직</th>
+                    <th rowspan="2">설치위치</th>
+                    <th rowspan="2">단말기ID</th>
+                    <th rowspan="2">자판기코드</th>
+                    <th colspan="2">현금</th>
+                    <th colspan="2">카드</th>
+                    <th colspan="2">간편결제</th>
+                    <th colspan="2">선불</th>
+                    <th colspan="2">징수수집</th>
+                    <th colspan="2">기타결제</th>
+                    <th colspan="2">총계</th>
+                  </tr>
+                  <tr>
+                    <th>건수</th>
                     <th>금액</th>
-                    <th>수단</th>
-                    <th>입력</th>
-                    <th>상태</th>
-                    <th>카드번호</th>
-                    <th>승인번호</th>
-                    <th>일련번호</th>
-                    <th>카드사</th>
-                    <th>매입사</th>
-                    <th>사업자번호</th>
-                    <th>상점ID</th>
-                    <th>마감일시</th>
+                    <th>건수</th>
+                    <th>금액</th>
+                    <th>건수</th>
+                    <th>금액</th>
+                    <th>건수</th>
+                    <th>금액</th>
+                    <th>건수</th>
+                    <th>금액</th>
+                    <th>건수</th>
+                    <th>금액</th>
+                    <th>건수</th>
+                    <th>금액</th>
                   </tr>
                 </thead>
                 <tbody></tbody>

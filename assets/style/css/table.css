@@ -1,16 +1,15 @@
 .data-search-box {
-  border: 1px solid #ddd;
+  border: 2px solid #ddd;
   border-radius: 5px;
   padding: 3% 3% 25px;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  box-shadow: 0px 3px 4px 0px rgba(171, 171, 171, 0.75);
-  -webkit-box-shadow: 0px 3px 4px 0px rgba(171, 171, 171, 0.75);
-  -moz-box-shadow: 0px 3px 4px 0px rgba(171, 171, 171, 0.75);
+  box-shadow: 8.485px 8.485px 16.38px 1.62px rgba(0, 0, 0, 0.15);
 }
 .data-search-box .btn-wrap {
   display: flex;
+  gap: 10px;
   justify-content: center;
   margin-top: 2%;
 }
@@ -23,6 +22,11 @@
   color: #fff;
   font-size: 16px;
   background: #fa000e;
+}
+.data-search-box .btn-wrap .btn-search.gray {
+  padding: 0 10px;
+  width: 130px;
+  background: #494949;
 }
 @media screen and (max-width: 1024px) {
   .data-search-box {
@@ -147,6 +151,18 @@
   gap: 12px;
   flex-wrap: wrap;
 }
+.form-group.machine {
+  flex-wrap: wrap;
+  row-gap: 10px;
+}
+.form-group.machine .select-wrapper {
+  width: 200px;
+}
+@media screen and (max-width: 1024px) {
+  .form-group.machine .select-wrapper {
+    width: 100%;
+  }
+}
 @media screen and (max-width: 1024px) {
   .form-group {
     flex-direction: column;
@@ -193,7 +209,7 @@
 
 .data-table-wrapper {
   margin-top: 20px;
-  border: 1px solid #ddd;
+  border: 2px solid #ddd;
   padding: 1% 1% 40px;
   border-radius: 5px;
   box-shadow: 8.485px 8.485px 16.38px 1.62px rgba(0, 0, 0, 0.15);
@@ -260,6 +276,7 @@ table.custom-table td {
   padding: 8px;
   text-align: center;
   white-space: nowrap;
+  vertical-align: middle;
 }
 table.custom-table thead {
   background-color: #ededf4;

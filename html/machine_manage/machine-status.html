@@ -97,12 +97,12 @@
                   <a href="../sales_info/deposit-status.html">입금현황</a>
                 </li>
                 <li>
-                  <a href="../sales_info/settlement-status.html">정신현황</a>
+                  <a href="../sales_info//settlement-status.html">정신현황</a>
                 </li>
               </ul>
             </li>
             <li>
-              <a href="../../html/machine_manage/machine-status.html">
+              <a href="">
                 <img
                   src="../../assets/img/nav/icon-management.png"
                   alt=""
@@ -111,7 +111,11 @@
                 자판기 운영정보</a
               >
               <ul class="sub-menu">
-                <li><a href="">가동상태 조회</a></li>
+                <li>
+                  <a href="../machine_management/machine-status.html"
+                    >가동상태 조회</a
+                  >
+                </li>
               </ul>
             </li>
             <li>
@@ -150,10 +154,10 @@
 
       <section>
         <div class="content-box">
-          <h3 class="title"><span>│</span> 입금현황</h3>
+          <h3 class="title"><span>│</span> 자판기 가동상태조회</h3>
           <!-- 데이터 필터 박스 -->
           <div class="data-search-box">
-            <div class="form-group">
+            <div class="form-group machine">
               <label for="organization">조직루트</label>
               <div class="select-wrapper">
                 <select id="organization">
@@ -161,76 +165,30 @@
                 </select>
               </div>
             </div>
-            <div class="form-group">
-              <label for="location">설치위치</label>
+            <div class="form-group machine">
+              <label for="organization">검색조건</label>
               <div class="select-wrapper">
-                <select id="location">
+                <select id="organization">
                   <option value="">선택하세요</option>
                 </select>
               </div>
-            </div>
-            <div class="form-group">
-              <label for="date-range">조회기간</label>
-              <div class="date-range">
-                <div class="btn-wrap">
-                  <button class="btn btn-active">오늘</button>
-                  <button class="btn">어제</button>
-                  <button class="btn">이번달</button>
-                  <button class="btn">지난달</button>
-                </div>
-
-                <div class="date-wrapper">
-                  <div class="date-inner">
-                    <input type="text" id="start-date" />
-                  </div>
-
-                  <span>~</span>
-                  <div class="date-inner">
-                    <input type="text" id="end-date" />
-                  </div>
-                </div>
+              <input type="text" class="form-group-input" />
+              <div class="select-wrapper">
+                <select id="organization">
+                  <option value="">선택하세요</option>
+                </select>
               </div>
-            </div>
-            <div class="form-group">
-              <strong>결제유형</strong>
-              <div class="checkboxs-wrapper">
-                <div class="custom-checkbox">
-                  <input type="checkbox" />
-                  <label for="">전체</label>
-                </div>
-                <div class="custom-checkbox">
-                  <input type="checkbox" checked />
-                  <label for="">신용</label>
-                </div>
-                <div class="custom-checkbox">
-                  <input type="checkbox" checked />
-                  <label for="">현금영수증</label>
-                </div>
-                <div class="custom-checkbox">
-                  <input type="checkbox" checked />
-                  <label for="">간편결제</label>
-                </div>
-                <div class="custom-checkbox">
-                  <input type="checkbox" checked />
-                  <label for="">현금</label>
-                </div>
-                <div class="custom-checkbox">
-                  <input type="checkbox" checked />
-                  <label for="">선불</label>
-                </div>
-                <div class="custom-checkbox">
-                  <input type="checkbox" checked />
-                  <label for="">정보수집</label>
-                </div>
-                <div class="custom-checkbox">
-                  <input type="checkbox" checked />
-                  <label for="">기타결제</label>
-                </div>
+              <div class="custom-checkbox">
+                <input type="checkbox" />
+                <label for="">수집오류(3시간이상 미수신)</label>
               </div>
             </div>
 
             <div class="btn-wrap">
               <button type="submit" class="btn-search">조회</button>
+              <button type="submit" class="btn-search gray">
+                단말기상태조회
+              </button>
             </div>
           </div>
           <!-- //데이터 필터 박스 -->
@@ -247,41 +205,23 @@
               <table id="test-table" class="custom-table">
                 <thead>
                   <tr>
-                    <th rowspan="2">조직</th>
-                    <th rowspan="2">설치위치</th>
-                    <th rowspan="2">자판기코드</th>
-                    <th rowspan="2">판매기간</th>
-                    <th rowspan="2">압금일</th>
-                    <th colspan="3">현금</th>
-                    <th colspan="3">신용</th>
-                    <th colspan="3">간편결제(신용)</th>
-                    <th colspan="3">간편결제(카카오,페이코)</th>
-                    <th colspan="3">계산비</th>
-                    <th colspan="3">대량결제수수료</th>
-                    <th colspan="3">미이비</th>
+                    <th>순번</th>
+                    <th>소속</th>
+                    <th>조직</th>
+                    <th>설치위치</th>
+                    <th>단말기 ID</th>
+                    <th>모델</th>
+                    <th>모델정립번호</th>
+                    <th>모델부가정보</th>
+                    <th>담당자</th>
+                    <th colspan="2">자판기 이상 상태</th>
+                    <th>최종거래일</th>
                   </tr>
                   <tr>
-                    <th>건수</th>
-                    <th>수수료</th>
-                    <th>금액</th>
-                    <th>건수</th>
-                    <th>수수료</th>
-                    <th>금액</th>
-                    <th>건수</th>
-                    <th>수수료</th>
-                    <th>금액</th>
-                    <th>건수</th>
-                    <th>수수료</th>
-                    <th>금액</th>
-                    <th>건수</th>
-                    <th>수수료</th>
-                    <th>금액</th>
-                    <th>건수</th>
-                    <th>수수료</th>
-                    <th>금액</th>
-                    <th>건수</th>
-                    <th>수수료</th>
-                    <th>금액</th>
+                    <th colspan="9"></th>
+                    <th>품절</th>
+                    <th>PD</th>
+                    <th></th>
                   </tr>
                 </thead>
                 <tbody></tbody>
