@@ -11,20 +11,20 @@
     gap: 10px;
     justify-content: center;
     margin-top: 2%;
-    .btn-search {
-      width: 75px;
-      height: 34px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: #fff;
-      font-size: 16px;
-      background: #fa000e;
-      &.gray {
-        padding: 0 10px;
-        width: 130px;
-        background: #494949;
-      }
+  }
+  .btn-search {
+    width: 75px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 15px;
+    background: #fa000e;
+    &.gray {
+      padding: 0 10px;
+      width: 130px;
+      background: #494949;
     }
   }
   @media screen and (max-width: 1024px) {
@@ -152,7 +152,7 @@
     flex-wrap: wrap;
   }
 
-  &.machine {
+  &.row-group {
     flex-wrap: wrap;
     row-gap: 10px;
     .select-wrapper {
@@ -319,6 +319,13 @@ table.custom-table {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
     border-collapse: collapse;
+  }
+}
+table.notice-table {
+  tbody {
+    .align-left {
+      text-align: left;
+    }
   }
 }
 
