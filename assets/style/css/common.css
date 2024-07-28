@@ -253,6 +253,18 @@
   align-items: center;
 }
 
+.flex {
+  display: flex;
+}
+
+.white-space-nowrap {
+  white-space: nowrap;
+}
+
+.text-center {
+  text-align: center;
+}
+
 .custom-checkbox {
   display: flex;
   align-items: center;
@@ -353,6 +365,62 @@
   .radio-group .radio-container,
   .radio-group .radio-label {
     font-size: 12px;
+  }
+}
+
+.modal {
+  padding: 1.5%;
+}
+.modal .modal-title {
+  font-size: 20px;
+  color: #000;
+  font-weight: 600;
+  margin-bottom: 4%;
+}
+.modal .modal-title span {
+  color: #b1b1b2;
+  font-size: 21px;
+}
+@media screen and (max-width: 1024px) {
+  .modal .modal-title {
+    font-size: 18px;
+    margin-bottom: 4%;
+  }
+  .modal .modal-title span {
+    font-size: 18px;
+  }
+}
+.modal .modal-button-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3% 0;
+  gap: 5px;
+}
+.modal .modal-button-wrap .btn {
+  width: 64px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 4px;
+  background: #fa000e;
+}
+.modal .modal-button-wrap .btn.gray {
+  background: #494949;
+}
+.modal .form-group .select-wrapper {
+  width: 100%;
+}
+.modal .form-group .select-wrapper select {
+  background: #fff;
+  border: 1px solid #ddd;
+}
+@media screen and (max-width: 1024px) {
+  .modal {
+    padding: 15px;
   }
 }
 

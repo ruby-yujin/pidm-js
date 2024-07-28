@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>프레스피코리아-PIDM:홈</title>
+
+    <!-- 폰트 -->
+    <link
+      href="https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo.css"
+      rel="stylesheet"
+    />
+
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+
+    <!-- jQuery pagination   -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.5/pagination.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.5/pagination.css"
+    />
+
+    <!-- jQuery Modal -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/style/css/reset.css" />
+    <link rel="stylesheet" href="../../assets/style/css/common.css" />
+    <link rel="stylesheet" href="../../assets/style/css/home.css" />
+    <link rel="stylesheet" href="../../assets/style/css/login.css" />
+    <link rel="stylesheet" href="../../assets/style/css/table.css" />
+
+    <!-- JS -->
+    <script src="../../assets/js/nav.js"></script>
+    <script src="../../assets/js/home.js"></script>
+    <script src="../../assets/js/graph.js"></script>
+    <script src="../../assets/js/table.js"></script>
+  </head>
+  <body>
+    <!-- header -->
+    <header id="header">
+      <button id="toggleNav" class="btn-nav show-mobile">
+        <img src="../../assets/img/nav/icon-nav.png" alt="" />
+      </button>
+      <div class="logo-wrap">
+        <img src="../../assets/img/logo.png" alt="" class="logo show-desktop" />
+        <span class="line"></span>
+        <img src="../../assets/img/logo-title.png" alt="" class="logo-title" />
+      </div>
+      <button type="button" class="btn-logout show-desktop">
+        <img src="../../assets/img/icon-logout.png" alt="" /> LOGOUT
+      </button>
+      <button type="button" class="btn-logout-m show-mobile">
+        <img src="../../assets/img/icon-logout-m.png" alt="" />
+      </button>
+    </header>
+    <!-- //header -->
+
+    <main id="content">
+      <aside id="nav-wrap">
+        <nav id="nav">
+          <ul class="main-menu">
+            <li>
+              <a href="../home.html">
+                <img
+                  src="../../assets/img/nav/icon-home.png"
+                  alt=""
+                  class="icon"
+                />
+                홈</a
+              >
+            </li>
+            <li>
+              <a href="">
+                <img
+                  src="../../assets/img/nav/icon-graph.png"
+                  alt=""
+                  class="icon"
+                />
+                자판기 매출정보</a
+              >
+              <ul class="sub-menu">
+                <li>
+                  <a href="../sales_info/transaction-details.html">거래내역</a>
+                </li>
+                <li>
+                  <a href="../sales_info/sale-saggregation.html">매출집계</a>
+                </li>
+                <li>
+                  <a href="../sales_info/closing-status.html">마감현황</a>
+                </li>
+                <li>
+                  <a href="../sales_info/deposit-status.html">입금현황</a>
+                </li>
+                <li>
+                  <a href="../sales_info//settlement-status.html">정신현황</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="">
+                <img
+                  src="../../assets/img/nav/icon-management.png"
+                  alt=""
+                  class="icon"
+                />
+                자판기 운영정보</a
+              >
+              <ul class="sub-menu">
+                <li>
+                  <a href="../machine_management/machine-status.html"
+                    >가동상태 조회</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="">
+                <img
+                  src="../../assets/img/nav/icon-service.png"
+                  alt=""
+                  class="icon"
+                />
+                서비스관리</a
+              >
+              <ul class="sub-menu">
+                <li><a href="">개인 정보 조회</a></li>
+                <li><a href="">상품 그룹 관리</a></li>
+                <li><a href="">상품관리</a></li>
+                <li><a href="">운영 자판기 관리</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="">
+                <img
+                  src="../../assets/img/nav/icon-ms.png"
+                  alt=""
+                  class="icon"
+                />
+                고객센터</a
+              >
+              <ul class="sub-menu">
+                <li><a href="">공지사항</a></li>
+                <li><a href="">자주 묻는 질문</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <section>
+        <div class="content-box">
+          <h3 class="title"><span>│</span> 상품 그룹 관리</h3>
+
+          <div class="content-box-row">
+            <div class="half-wrapper">
+              <div class="data-table-top">
+                <div class="btn-wrap align-right">
+                  <a
+                    class="btn-save"
+                    href="#modal-group-product"
+                    rel="modal:open"
+                    >등록</a
+                  >
+                  <a class="btn-save gray">수정</a>
+                </div>
+              </div>
+              <div class="table-responsive">
+                <table class="custom-table mobile-width-100">
+                  <thead>
+                    <tr>
+                      <th>그룹군</th>
+                      <th>코드</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>000커피</td>
+                      <td>CO000001DE</td>
+                    </tr>
+                    <tr>
+                      <td>000커피</td>
+                      <td>CO000001DE</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="half-wrapper">
+              <div class="data-table-top">
+                <div class="btn-wrap align-right">
+                  <button class="btn-save">등록</button>
+                  <button class="btn-save gray">수정</button>
+                </div>
+              </div>
+              <div class="table-responsive">
+                <table class="custom-table mobile-width-100">
+                  <thead>
+                    <tr>
+                      <th>그룹군</th>
+                      <th>코드</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>000커피</td>
+                      <td>CO000001DE</td>
+                    </tr>
+                    <tr>
+                      <td>000커피</td>
+                      <td>CO000001DE</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- footer -->
+    <footer id="footer">
+      <div>
+        <p class="company-info">주식회사 프레피스 코리아 | 대표이사: 마채환</p>
+        <p class="company-info">
+          사업자등록번호: 101-86-78955 | <br class="show-mobile" />
+          서울시 성동구 상원1길 26 서울숲A타워 1301호 (우)04779 |
+          <br class="show-mobile" />Fax. 02-2295-3801
+        </p>
+        <p class="copy">Copyright 2014 ⓒ PREPHIS COREA. All right reserved.</p>
+      </div>
+
+      <div class="customer-center">
+        <img src="../../assets/img/icon-phone.png" alt="" />
+        <strong><span>고객센터</span>1877-8873</strong>
+      </div>
+    </footer>
+    <!-- //footer -->
+
+    <!-- modal  -->
+    <div id="modal-group-product" class="modal">
+      <h3 class="modal-title"><span>│</span> 상품 그룹 관리</h3>
+      <form>
+        <table class="default-table width-100">
+          <tr>
+            <th><label for="groupName">그룹명:</label></th>
+            <td>
+              <input type="text" id="groupName" name="groupName" required />
+            </td>
+          </tr>
+          <tr>
+            <th><label for="groupCode">코드:</label></th>
+            <td>
+              <div class="flex">
+                <input type="text" id="groupCode" name="groupCode" required />
+                <div class="flex align-center">
+                  <input
+                    type="checkbox"
+                    id="auto-save"
+                    name="auto-save"
+                    checked
+                  />
+                  <label for="auto-save" class="white-space-nowrap">자동</label>
+                </div>
+              </div>
+            </td>
+          </tr>
+        </table>
+
+        <div class="modal-button-wrap">
+          <button type="submit" class="btn gray">수정</button>
+          <a href="#" rel="modal:close" class="btn">등록</a>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        $("#modal-group-product form").on("submit", function (e) {
+          e.preventDefault();
+          // 여기에 폼 제출 로직을 추가
+          console.log("그룹명:", $("#groupName").val());
+          console.log("코드:", $("#groupCode").val());
+          $.modal.close();
+        });
+      });
+    </script>
+    <!-- //modal  -->
+  </body>
+</html>

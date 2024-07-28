@@ -7,14 +7,28 @@
   gap: 20px;
   box-shadow: 8.485px 8.485px 16.38px 1.62px rgba(0, 0, 0, 0.15);
 }
-.data-search-box .btn-wrap {
+@media screen and (max-width: 1024px) {
+  .data-search-box {
+    border: none;
+    box-shadow: none;
+    padding: 0 5px 20px;
+  }
+}
+
+.btn-wrap {
   display: flex;
   gap: 10px;
   justify-content: center;
   margin-top: 2%;
 }
-.data-search-box .btn-search {
-  width: 75px;
+.btn-wrap.align-right {
+  justify-content: flex-end;
+  gap: 5px;
+  margin: 2% 0;
+}
+
+.btn-search {
+  min-width: 75px;
   height: 30px;
   display: flex;
   justify-content: center;
@@ -22,20 +36,36 @@
   color: #fff;
   font-size: 15px;
   background: #fa000e;
+  white-space: nowrap;
 }
-.data-search-box .btn-search.gray {
-  padding: 0 10px;
-  width: 130px;
+.btn-search.gray {
+  padding: 0 16px;
   background: #494949;
 }
 @media screen and (max-width: 1024px) {
-  .data-search-box {
-    border: none;
-    box-shadow: none;
-    padding: 0 5px 20px;
-  }
-  .data-search-box .btn-wrap .btn-search {
+  .btn-search {
     font-size: 14px;
+    font-weight: 600;
+  }
+}
+
+.btn-save {
+  width: 64px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 4px;
+  background: #fa000e;
+}
+.btn-save.gray {
+  background: #494949;
+}
+@media screen and (max-width: 1024px) {
+  .btn-save {
+    font-size: 12px;
     font-weight: 600;
   }
 }
@@ -257,6 +287,32 @@
   }
 }
 
+.content-box-row {
+  display: flex;
+  gap: 2%;
+}
+@media screen and (max-width: 1024px) {
+  .content-box-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+.half-wrapper {
+  min-height: 800px;
+  flex: 1;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  padding: 1.5%;
+  box-shadow: 8.485px 8.485px 16.38px 1.62px rgba(0, 0, 0, 0.15);
+}
+@media screen and (max-width: 1024px) {
+  .half-wrapper {
+    min-height: 400px;
+    padding: 2.5%;
+  }
+}
+
 .table-responsive {
   width: 100%;
   overflow-x: auto;
@@ -300,10 +356,33 @@ table.custom-table tbody td:first-child {
     -webkit-overflow-scrolling: touch;
     border-collapse: collapse;
   }
+  table.custom-table.mobile-width-100 {
+    display: inline-table;
+  }
 }
 
 table.notice-table tbody .align-left {
   text-align: left;
+}
+
+.btn-edit {
+  margin: 0 auto;
+  width: 64px;
+  height: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 4px;
+  background: #005aab;
+}
+@media screen and (max-width: 1024px) {
+  .btn-edit {
+    width: 40px;
+    height: 22px;
+    font-size: 11px;
+  }
 }
 
 .pagination-wrapper {
@@ -340,6 +419,108 @@ table.notice-table tbody .align-left {
 }
 .pagination-wrapper .paginationjs-pages ul li.disabled a:hover {
   background: #494949;
+}
+
+table.default-table {
+  width: 800px;
+  border: 1px solid #c3c3c3;
+}
+table.default-table tbody th {
+  width: 130px;
+  background-color: #ededf4;
+  padding: 8px 12px;
+  text-align: center;
+  border-top: 1px solid #c3c3c3;
+  border-right: 1px solid #c3c3c3;
+}
+table.default-table tbody th label {
+  font-size: 16px;
+  font-weight: bold;
+}
+table.default-table tbody td {
+  padding: 5px 12px;
+  border-top: 1px solid #c3c3c3;
+}
+table.default-table tbody td input[type=text] {
+  border-radius: 5px;
+  width: 100%;
+  border: 1px solid #c3c3c3;
+  padding: 10px;
+  height: 34px;
+}
+table.default-table tbody td input[type=text][readonly] {
+  background-color: #ededf4;
+  color: #666;
+}
+@media (max-width: 600px) {
+  table.default-table {
+    width: 100%;
+  }
+  table.default-table tbody th {
+    width: 90px;
+    padding: 2px 8px;
+  }
+  table.default-table tbody th label {
+    font-size: 12px;
+  }
+  table.default-table tbody td {
+    padding: 2px 8px;
+  }
+  table.default-table tbody td input {
+    font-size: 12px;
+  }
+}
+table.default-table.width-100 {
+  width: 100%;
+}
+
+#modal-machine-manage {
+  max-width: 800px;
+}
+#modal-machine-manage .modal-machine-table {
+  width: 100%;
+  border: 1px solid #000;
+}
+#modal-machine-manage .modal-machine-table th {
+  border-bottom: 1px solid #000;
+  padding: 8px;
+  font-size: 12px;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+#modal-machine-manage .modal-machine-table th.border {
+  border-left: 1px solid #000;
+}
+#modal-machine-manage .modal-machine-table td {
+  padding: 8px;
+  border-bottom: 1px solid #000;
+}
+#modal-machine-manage .modal-machine-table td .form-row-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+#modal-machine-manage .modal-machine-table td .form-row-wrapper input {
+  border: 1px solid #ddd;
+  height: 30px;
+  border-radius: 5px;
+  line-height: 30px;
+  text-indent: 10px;
+  font-size: 11px;
+}
+#modal-machine-manage .modal-machine-table td .form-row-wrapper .btn-check {
+  max-width: 80px;
+  height: 24px;
+  border: 1px solid #4b4d4f;
+  color: #4b4d4f;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
 }
 
 /*# sourceMappingURL=table.css.map */

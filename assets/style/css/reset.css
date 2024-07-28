@@ -25,6 +25,10 @@ body {
   display: revert;
 }
 
+input[type="checkbox"] {
+  all: revert;
+}
+
 /* Preferred box-sizing value */
 *,
 *::before,

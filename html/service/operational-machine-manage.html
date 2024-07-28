@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>프레스피코리아-PIDM:홈</title>
+
+    <!-- 폰트 -->
+    <link
+      href="https://webfontworld.github.io/NanumSquareNeo/NanumSquareNeo.css"
+      rel="stylesheet"
+    />
+
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.5/pagination.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.5/pagination.css"
+    />
+
+    <!-- jQuery Modal -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../assets/style/css/reset.css" />
+    <link rel="stylesheet" href="../../assets/style/css/common.css" />
+    <link rel="stylesheet" href="../../assets/style/css/home.css" />
+    <link rel="stylesheet" href="../../assets/style/css/login.css" />
+    <link rel="stylesheet" href="../../assets/style/css/table.css" />
+
+    <!-- JS -->
+    <script src="../../assets/js/nav.js"></script>
+    <script src="../../assets/js/home.js"></script>
+    <script src="../../assets/js/graph.js"></script>
+    <script src="../../assets/js/table.js"></script>
+  </head>
+  <body>
+    <!-- header -->
+    <header id="header">
+      <button id="toggleNav" class="btn-nav show-mobile">
+        <img src="../../assets/img/nav/icon-nav.png" alt="" />
+      </button>
+      <div class="logo-wrap">
+        <img src="../../assets/img/logo.png" alt="" class="logo show-desktop" />
+        <span class="line"></span>
+        <img src="../../assets/img/logo-title.png" alt="" class="logo-title" />
+      </div>
+      <button type="button" class="btn-logout show-desktop">
+        <img src="../../assets/img/icon-logout.png" alt="" /> LOGOUT
+      </button>
+      <button type="button" class="btn-logout-m show-mobile">
+        <img src="../../assets/img/icon-logout-m.png" alt="" />
+      </button>
+    </header>
+    <!-- //header -->
+
+    <main id="content">
+      <aside id="nav-wrap">
+        <nav id="nav">
+          <ul class="main-menu">
+            <li>
+              <a href="../home.html">
+                <img
+                  src="../../assets/img/nav/icon-home.png"
+                  alt=""
+                  class="icon"
+                />
+                홈</a
+              >
+            </li>
+            <li>
+              <a href="">
+                <img
+                  src="../../assets/img/nav/icon-graph.png"
+                  alt=""
+                  class="icon"
+                />
+                자판기 매출정보</a
+              >
+              <ul class="sub-menu">
+                <li>
+                  <a href="../sales_info/transaction-details.html">거래내역</a>
+                </li>
+                <li>
+                  <a href="../sales_info/sale-saggregation.html">매출집계</a>
+                </li>
+                <li>
+                  <a href="../sales_info/closing-status.html">마감현황</a>
+                </li>
+                <li>
+                  <a href="../sales_info/deposit-status.html">입금현황</a>
+                </li>
+                <li>
+                  <a href="../sales_info//settlement-status.html">정신현황</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="">
+                <img
+                  src="../../assets/img/nav/icon-management.png"
+                  alt=""
+                  class="icon"
+                />
+                자판기 운영정보</a
+              >
+              <ul class="sub-menu">
+                <li>
+                  <a href="../machine_management/machine-status.html"
+                    >가동상태 조회</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="">
+                <img
+                  src="../../assets/img/nav/icon-service.png"
+                  alt=""
+                  class="icon"
+                />
+                서비스관리</a
+              >
+              <ul class="sub-menu">
+                <li><a href="">개인 정보 조회</a></li>
+                <li><a href="">상품 그룹 관리</a></li>
+                <li><a href="">상품관리</a></li>
+                <li><a href="">운영 자판기 관리</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="">
+                <img
+                  src="../../assets/img/nav/icon-ms.png"
+                  alt=""
+                  class="icon"
+                />
+                고객센터</a
+              >
+              <ul class="sub-menu">
+                <li><a href="">공지사항</a></li>
+                <li><a href="">자주 묻는 질문</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <section>
+        <div class="content-box">
+          <h3 class="title"><span>│</span> 운영 자판기 관리</h3>
+          <!-- 데이터 필터 박스 -->
+          <div class="data-search-box">
+            <div class="form-group row-group">
+              <label for="organization">검색조건</label>
+              <div class="select-wrapper">
+                <select id="">
+                  <option value="">선택하세요</option>
+                </select>
+              </div>
+              <input
+                type="text"
+                class="form-group-input"
+                placeholder="검색어"
+              />
+              <div class="select-wrapper">
+                <select id="">
+                  <option value="">ASP 과금 전체</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="organization">설치위치</label>
+              <div class="select-wrapper">
+                <select id="organization">
+                  <option value="">선택하세요</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="btn-wrap">
+              <button type="submit" class="btn-search">조회</button>
+              <button type="submit" class="btn-search gray">등록</button>
+            </div>
+          </div>
+          <!-- //데이터 필터 박스 -->
+
+          <div class="data-table-wrapper">
+            <div class="data-table-top">
+              <p class="result">검색결과 : <span class="red">0</span> 건</p>
+              <div class="btn-wrap">
+                <button>엑셀저장</button>
+              </div>
+            </div>
+            <div class="table-responsive">
+              <table class="custom-table">
+                <thead>
+                  <tr>
+                    <th>순번</th>
+                    <th>관리</th>
+                    <th>소속</th>
+                    <th>조직</th>
+                    <th>자판기코드</th>
+                    <th>단말기ID</th>
+                    <th>모델</th>
+                    <th>모뎀전화</th>
+                    <th>설치위치</th>
+                    <th>담당자</th>
+                    <th>과금</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>
+                      <a
+                        href="#modal-machine-manage"
+                        rel="modal:open"
+                        class="btn-edit"
+                        >수정</a
+                      >
+                    </td>
+                    <td>씨에치벤딩(이훈)</td>
+                    <td>자판기</td>
+                    <td>2000048793</td>
+                    <td>2000048793</td>
+                    <td>롯데아이스크림(VTS)</td>
+                    <td>-</td>
+                    <td>2000048793</td>
+                    <td>이훈<br />chvd</td>
+                    <td>Y</td>
+                  </tr>
+                  <tr>
+                    <td>1</td>
+                    <td>
+                      <a
+                        href="#modal-machine-manage"
+                        rel="modal:open"
+                        class="btn-edit"
+                        >수정</a
+                      >
+                    </td>
+                    <td>씨에치벤딩(이훈)</td>
+                    <td>자판기</td>
+                    <td>2000048793</td>
+                    <td>2000048793</td>
+                    <td>롯데아이스크림(VTS)</td>
+                    <td>-</td>
+                    <td>2000048793</td>
+                    <td>이훈<br />chvd</td>
+                    <td>Y</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="pagination-wrapper align-center">
+                <div id="pagination-test01"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- footer -->
+    <footer id="footer">
+      <div>
+        <p class="company-info">주식회사 프레피스 코리아 | 대표이사: 마채환</p>
+        <p class="company-info">
+          사업자등록번호: 101-86-78955 | <br class="show-mobile" />
+          서울시 성동구 상원1길 26 서울숲A타워 1301호 (우)04779 |
+          <br class="show-mobile" />Fax. 02-2295-3801
+        </p>
+        <p class="copy">Copyright 2014 ⓒ PREPHIS COREA. All right reserved.</p>
+      </div>
+
+      <div class="customer-center">
+        <img src="../../assets/img/icon-phone.png" alt="" />
+        <strong><span>고객센터</span>1877-8873</strong>
+      </div>
+    </footer>
+    <!-- //footer -->
+
+    <!-- modal  -->
+    <div id="modal-machine-manage" class="modal">
+      <h3 class="modal-title"><span>│</span> 운영 자판기 상세</h3>
+      <form>
+        <div class="table-responsive">
+          <table class="modal-machine-table">
+            <tr>
+              <th>자판기 조직*</th>
+              <td colspan="3">
+                <div class="form-row-wrapper">
+                  <div class="form-group">
+                    <div class="select-wrapper">
+                      <select id="">
+                        <option value=""></option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="select-wrapper">
+                      <select id="">
+                        <option value=""></option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="select-wrapper">
+                      <select id="">
+                        <option value=""></option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <div class="select-wrapper">
+                      <select id="">
+                        <option value=""></option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th>담당자*</th>
+              <td colspan="3">
+                <div class="form-group">
+                  <div class="select-wrapper">
+                    <select id="">
+                      <option value=""></option>
+                    </select>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th>자판기 코드*</th>
+              <td colspan="3">
+                <div class="form-row-wrapper">
+                  <input type="text" />
+                  <button class="btn-check">
+                    <img src="../../assets/img/icon-check.png" alt="" />
+                    중복체크
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th>모델</th>
+              <td>
+                <div class="form-row-wrapper">
+                  <input type="text" />
+                </div>
+              </td>
+              <th class="border">단말기ID*</th>
+              <td>
+                <div class="form-row-wrapper">
+                  <input type="text" />
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th>모델번호</th>
+              <td>
+                <div class="form-row-wrapper">
+                  <input type="text" />
+                </div>
+              </td>
+              <th class="border">모델일련번호</th>
+              <td>
+                <div class="form-row-wrapper">
+                  <input type="text" />
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th>ASP파급</th>
+              <td colspan="3">
+                <div class="radio-group">
+                  <label class="radio-container">
+                    <input type="radio" name="asp" value="yes" checked />
+                    <span class="radio-checkmark"></span>
+                    <span class="radio-label">예</span>
+                  </label>
+                  <label class="radio-container">
+                    <input type="radio" name="asp" value="no" />
+                    <span class="radio-checkmark"></span>
+                    <span class="radio-label">아니오</span>
+                  </label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th>설치 위치*</th>
+              <td colspan="3">
+                <div class="form-row-wrapper">
+                  <input type="text" />
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th>설치위치이동 여부*</th>
+              <td colspan="3">
+                <div class="radio-group">
+                  <label class="radio-container">
+                    <input
+                      type="radio"
+                      name="location_move"
+                      value="yes"
+                      checked
+                    />
+                    <span class="radio-checkmark"></span>
+                    <span class="radio-label">예 이동합니다.</span>
+                  </label>
+                  <label class="radio-container">
+                    <input type="radio" name="location_move" value="no" />
+                    <span class="radio-checkmark"></span>
+                    <span class="radio-label">아니오 위치명만 수정합니다.</span>
+                  </label>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th>설치위치번호*</th>
+              <td>
+                <div class="form-row-wrapper">
+                  <input type="text" placeholder="숫자/영문만 입력" />
+                </div>
+              </td>
+              <th class="border">설치위치코드</th>
+              <td>
+                <div class="form-row-wrapper">
+                  <input type="text" placeholder="숫자/영문만 입력" />
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th>비가동 여부</th>
+              <td>
+                <div class="form-row-wrapper">
+                  <div class="form-group">
+                    <div class="select-wrapper">
+                      <select id="">
+                        <option value=""></option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+              </td>
+              <th class="border">보상판매</th>
+              <td>
+                <div class="radio-group">
+                  <label class="radio-container">
+                    <input
+                      type="radio"
+                      name="compensation-sales"
+                      value="yes"
+                      checked
+                    />
+                    <span class="radio-checkmark"></span>
+                    <span class="radio-label">예</span>
+                  </label>
+                  <label class="radio-container">
+                    <input type="radio" name="compensation-sales" value="no" />
+                    <span class="radio-checkmark"></span>
+                    <span class="radio-label">아니오</span>
+                  </label>
+                </div>
+              </td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="modal-button-wrap">
+          <button type="submit" class="btn gray">취소</button>
+          <a href="#" rel="modal:close" class="btn">저장</a>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        $("#modal-machine-manage form").on("submit", function (e) {
+          e.preventDefault();
+          // 여기에 폼 제출 로직을 추가
+
+          $.modal.close();
+        });
+      });
+    </script>
+    <!-- //modal  -->
+  </body>
+</html>
