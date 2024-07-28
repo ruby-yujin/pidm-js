@@ -1,5 +1,45 @@
 $(document).ready(function () {
   var $nav = $("#nav");
+  var currentPage = window.location.pathname
+    .split("/")
+    .pop()
+    .replace(".html", "");
+
+  const menu = [
+    { link: "home" },
+    { link: "transaction-details" },
+    { link: "sale-saggregation" },
+    { link: "closing-status" },
+    { link: "deposit-status" },
+    { link: "settlement-status" },
+    { link: "machine-status" },
+    { link: "my-info-edit" },
+    { link: "product-group-manage" },
+    { link: "product-manage" },
+    { link: "operational-machine-manage" },
+    { link: "notice" },
+    { link: "popular-qna" }
+  ];
+
+  var activeMenuItem = menu.find((item) => item.link === currentPage);
+
+  if (activeMenuItem) {
+    // 일치하는 메뉴 항목에 대해 active 클래스 추가
+    $("#nav .main-menu a, #nav .sub-menu a").each(function () {
+      var linkHref = $(this).attr("href");
+      if (linkHref.includes(activeMenuItem.link)) {
+        $(this).addClass("active");
+        $(this).parents("li").addClass("active");
+
+        // 서브메뉴 항목인 경우, 상위 메인 메뉴 항목에도 'active' 클래스 추가
+        if ($(this).closest(".sub-menu").length) {
+          $(this).closest(".main-menu > li").addClass("active");
+        }
+      }
+    });
+  }
+
+  console.log(currentPage);
 
   // 아코디언 초기화를 제거하고 커스텀 토글 함수 구현
   function toggleSubMenu($item) {

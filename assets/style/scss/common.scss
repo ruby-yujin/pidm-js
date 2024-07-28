@@ -148,7 +148,7 @@
 #nav {
   ul.main-menu {
     li {
-      a {
+      > a {
         width: 100%;
         height: 70px;
         color: #fff;
@@ -164,14 +164,14 @@
       }
       &.active {
         background: #5a5a5a;
-        a {
+        > a {
           font-weight: bold;
         }
       }
       ul.sub-menu {
         display: none;
         li {
-          a {
+          > a {
             color: #fff;
             font-size: 16px;
             height: 40px;
@@ -182,11 +182,12 @@
           }
           &.active {
             position: relative;
-            a {
+            > a {
+              color: #ee0000;
               background: #5a5a5a;
               &::before {
                 content: "";
-                width: 6px;
+                width: 4px;
                 height: 100%;
                 background: #ee0000;
                 position: absolute;
